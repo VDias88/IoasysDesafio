@@ -3,11 +3,12 @@ import { TextInput } from 'react-native-paper'
 import { StyleSheet,TouchableHighlight, View } from 'react-native'
 import { observer } from 'mobx-react'
 import { TextInputProps } from '../../types'
-const TextInput24 = observer(({label, right, secureTextEntry, onRightPress,iconName,...props}:TextInputProps) =>{
+const TextInput24 = observer(({label, right, secureTextEntry, onRightPress,iconName,value,...props}:TextInputProps) =>{
   return (
   <TextInput
     style={[props.style,styles.style]} 
     label={label}
+    value={value}
     mode='flat'
     selectionColor='white'
     secureTextEntry={secureTextEntry}

@@ -128,6 +128,12 @@ async getBookById(){
     setBooksDetails(description:BooksProps){
         this.currentBookDetails = description
     }
+    setEmail(text:string){
+        this.email = text
+    }
+    setPassWord(text:string){
+        this.passWord = text
+    }
     increasePageCount(){
         this.pageCount+=1
     }

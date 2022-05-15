@@ -31,7 +31,6 @@ async function fetchMoreData(){
     }
     return(
       <ListItem
-          id={item.id}
           title={item.title}
           imageUrl={item.imageUrl}
           author={item?.authors[0]}
@@ -46,7 +45,6 @@ async function fetchMoreData(){
   function logOff(){
     globalStore.email = ''
     globalStore.passWord = ''
-    console.log('s')
     navigation.navigate('LogIn')
   }
 
@@ -77,6 +75,7 @@ async function fetchMoreData(){
             </View>
         </View>
         <FlatList
+        keyExtractor={(item) => item.id}
         data={globalStore.booksList}
         renderItem={({item})=>renderItem(item)}
         onEndReached={()=>fetchMoreData()}
